@@ -12,7 +12,7 @@ class Node():
 
         return f"{self.option_title}"
 
-    def add_child(self,child_node):
+    def add_child(self, child_node):
         # adds a new child node to a node
 
         self.children.append(child_node)
