@@ -56,16 +56,23 @@ main_story.add_new_child(
     child_description="You've been killed by the aliens. The game has ened."
 )
 
-#Leave Proxima Centaury B
-main_story.connect_existing_child('leave_proxima_centaury_b', 'kepler_422b')
+#Leave Proxima Centauri B
+main_story.add_new_child(
+    parent_id = 'proxima_centauri_b', 
+    child_id = 'leave_proxima_centauri_b',
+    child_option_title="Leave for unkown planet 2",
+    child_description="You are now heading to unkown planet 2"
+)
 
-#Kepler-442b
+#Kepler 422b
 main_story.add_new_child(
     parent_id = 'earth', 
     child_id = 'kepler_422b',
-    child_option_title='Go to Unkown Planet 2',
-    child_description="---"
+    child_option_title="Go to Unkown planet 2",
+    child_description="You are now heading to unkown planet 2"
 )
+
+main_story.connect_existing_child('leave_proxima_centauri_b', 'kepler_422b')
 
 #Explore Kepler-442b
 main_story.add_new_child(
@@ -103,7 +110,7 @@ main_story.add_new_child(
 main_story.add_new_child(
     parent_id = 'back_to_spaceship', 
     child_id = 'leave_kepler_422b_2',
-    child_option_title=' Go back to Unkown planet 1 (Proxima Centauri b)',
+    child_option_title='Go back to Unkown planet 1 (Proxima Centauri b)',
     child_description="You ran out of fuel on the way. The game has ended."
 )
 
@@ -111,7 +118,7 @@ main_story.add_new_child(
 main_story.add_new_child(
     parent_id = 'back_to_spaceship', 
     child_id = 'leave_kepler_422b_3',
-    child_option_title='Leave for Unkown planet 3 ',
+    child_option_title='Leave for Unkown planet 3',
     child_description="You encountered a black hole on the way to Unknown planet 3. The game has eneded."
 )
 
@@ -147,6 +154,16 @@ main_story.add_new_child(
     child_description="Okay, you're being sent back to the start of the game..."
 )
 
+main_story.connect_existing_child('play_again', 'earth')
+
+#Leave Kepler 244b for Kepler 62f
+main_story.add_new_child(
+    parent_id = 'explore_kepler_422b_3', 
+    child_id = 'leave_kepler_422b',
+    child_option_title='Leave for unkown planet 3',
+    child_description="You are now heading to unkown planet 3"
+)
+
 #Kepler-62f
 main_story.add_new_child(
     parent_id = 'earth', 
@@ -154,6 +171,8 @@ main_story.add_new_child(
     child_option_title='Go to Unkown Planet 3',
     child_description="---"
 )
+
+main_story.connect_existing_child('leave_kepler_422b', 'kepler_62f')
 
 #Explore Kepler 62f
 main_story.add_new_child(

@@ -1,17 +1,14 @@
 from model_node import Node
 
 class Story():
-    def __init__(self, title, start_id, start_option_title, start_description):
+    def __init__(self, title, start_id, start_option_title, start_description, fuel_supply, oxygen_supply, food_supply):
         # initializes a Story object with its properties
 
         self.title = title # the title of your story
         self.current_node = Node(start_id, start_option_title, start_description) #the current Node of your story
         self.first_node = self.current_node # the first Node of your story
-        self.fuel_supply = 20
-        self.oxygen_supply = 20
-        self.food_supply = 20
 
-    def add_new_child(self, parent_id, child_id, child_option_title, child_description):
+    def add_new_child(self, parent_id, child_id, child_option_title, child_description, fuel_supply, oxygen_supply, food_supply):
         # adds a new child node to a parent node
 
         parent_node = self.first_node.find(parent_id)
@@ -19,7 +16,10 @@ class Story():
         new_child_node = Node(
             id = child_id,
             option_title = child_option_title,
-            description= child_description
+            description= child_description,
+            fuel = fuel + fuel_supply,
+            oxygen = oxygen + oxygen_supply,
+            food = food + food_supply
         )
         
         parent_node.add_child(new_child_node)
@@ -32,7 +32,6 @@ class Story():
 
         parent_node.add_child(existing_node)
 
-    
     def get_current_children(self):
         # returns a list of the children of the current node
 
