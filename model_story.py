@@ -5,10 +5,13 @@ class Story():
         # initializes a Story object with its properties
 
         self.title = title # the title of your story
-        self.current_node = Node(start_id, start_option_title, start_description) #the current Node of your story
+        self.current_node = Node(start_id, start_option_title, start_description, fuel_supply, oxygen_supply, food_supply) #the current Node of your story
         self.first_node = self.current_node # the first Node of your story
+        self.fuel_supply = 20
+        self.oxygen_supply = 20
+        self.food_supply = 20
 
-    def add_new_child(self, parent_id, child_id, child_option_title, child_description, fuel_supply, oxygen_supply, food_supply):
+    def add_new_child(self, parent_id, child_id, child_option_title, child_description, fuel, oxygen, food):
         # adds a new child node to a parent node
 
         parent_node = self.first_node.find(parent_id)
@@ -17,9 +20,9 @@ class Story():
             id = child_id,
             option_title = child_option_title,
             description= child_description,
-            fuel = fuel + fuel_supply,
-            oxygen = oxygen + oxygen_supply,
-            food = food + food_supply
+            fuel_supply = fuel,
+            oxygen_supply = oxygen,
+            food_supply = food
         )
         
         parent_node.add_child(new_child_node)
@@ -50,8 +53,17 @@ class Story():
         else:
             return False 
 
+    def fuel_supply(self, fuel_supply, add_fuel):
+        add_fuel = self.fuel
+        self.fuel_supply = fuel_supply + add_fuel
 
+    def oxygen_supply(self, oxygen_supply, add_oxygen):
+        add_oxygen = self.oxygen
+        self.oxygen_supply = oxygen_supply + add_oxygen
 
+    def food_supply(self, food_supply, add_food):
+        add_food = self.food
+        self.food_supply = food_supply + add_food
 
     
 

@@ -1,5 +1,5 @@
 class Node():
-    def __init__(self, id, option_title, description):
+    def __init__(self, id, option_title, description, fuel_supply, oxygen_supply, food_supply):
         # initializes a node object with its properties
         
         self.id = id # a unique id

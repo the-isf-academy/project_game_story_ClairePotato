@@ -1,13 +1,14 @@
-from InquirerPy import inquirer, get_style        
+from InquirerPy import inquirer, get_style  
+from helpers import print_slow     
 
 class View:
 
-    def menu(self,prompt, options):
+    def menu(self, prompt, options):
         # This function creates an interactive Terminal menu.
         # it returns the chosen ption 
 
         choice = inquirer.select(
-            message= f"\n{prompt}",
+            message= f"{prompt}",
             choices= options,
             qmark="",
             amark="",
@@ -20,21 +21,32 @@ class View:
             ).execute()
 
         return choice
-    
+
     def start_game(self, story):
         print("="*50)
         print(f"Title: {story.title}")
-        print(f"\n{story.first_node.option_title}")
-        print(f"{story.first_node.description}")
+        print(f"{story.first_node.option_title}")
+        print_slow(f"{story.first_node.description}", 0.03)
         print("="*50)
 
-    def show_node_description(self,node):
-        print(f"{node.description}")
+    def show_node_description(self, node):
+        print_slow(f"{node.description}", 0.05)
+    
+    def show_supply_stats(self, fuel_supply, oxygen_supply, food_supply):
+        print(f"""
+              
+-----STATS-----
+Fuel Supply: {fuel_supply}
+Oxygen Supply: {oxygen_supply}
+Food Supply: {food_supply}""")
+        print("-"*15)
 
     def end_game(self):
-        print("\n")
         print("="*50)
-        print("End of Story")
+        print("""\
+                                _ 
+ ___ ___ _____ ___    ___ ___ _| |
+| . | .'|     | -_|  | -_|   | . |
+|_  |__,|_|_|_|___|  |___|_|_|___|
+|___|                             """)
         print("="*50)
-
-
