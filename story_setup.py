@@ -17,7 +17,7 @@ main_story.add_new_child(
     child_id = 'proxima_centauri_b',
     child_option_title='Go to Unkown Planet 1',
     child_description="You are now heading to Unkown Planet 1",
-    fuel = 0,
+    fuel = -10,
     oxygen = 0,
     food = 0
 )
@@ -29,7 +29,7 @@ main_story.add_new_child(
     child_option_title='Communicate with aliens',
     child_description="The aliens say you aren't welcomed here, but you can trade with them for either oxygen, fuel, or food, and then leave for another planet.", #aliens offer trade
     fuel = 0,
-    oxygen = 0,
+    oxygen = 5,
     food = 0
 )
 
@@ -50,7 +50,7 @@ main_story.add_new_child(
     child_id = 'trade_fuel',
     child_option_title='Trade for fuel, leave for next planet',
     child_description="Great! Your fuel supply has been partially replenished. You are now being sent to the next planet...",
-    fuel = 0,
+    fuel = 5,
     oxygen = 0,
     food = 0
 )
@@ -63,7 +63,7 @@ main_story.add_new_child(
     child_description="Great! Your food supply has been partially replenished. You are now being sent to the next planet...",
     fuel = 0,
     oxygen = 0,
-    food = 0
+    food = 5
 )
 
 #Don't trade --> END
@@ -82,7 +82,7 @@ main_story.add_new_child(
     parent_id = 'proxima_centauri_b', 
     child_id = 'leave_proxima_centauri_b',
     child_option_title="Leave for unkown planet 2",
-    child_description="You are now heading to unkown planet 2",
+    child_description="You are now heading to Unkown Planet 2",
     fuel = 0,
     oxygen = 0,
     food = 0
@@ -93,7 +93,7 @@ main_story.add_new_child(
     parent_id = 'earth', 
     child_id = 'kepler_422b',
     child_option_title="Go to Unkown planet 2",
-    child_description="You are now heading to unkown planet 2",
+    child_description="You are now heading to Unkown Planet 2",
     fuel = 0,
     oxygen = 0,
     food = 0
@@ -108,7 +108,7 @@ main_story.add_new_child(
     child_option_title='Explore planet',
     child_description="You have been exploring for a while and you've encounted a bit of flora and fauna, but your oxygen supply is running low. You can head back to spaceship but you might not be able to find this area again, do you want to continue exploring?",
     fuel = 0,
-    oxygen = 0,
+    oxygen = -10,
     food = 0
 )
 
@@ -119,8 +119,8 @@ main_story.add_new_child(
     child_option_title='Continue exploring planet',
     child_description="You have run out of oxygen, the game has ended",
     fuel = 0,
-    oxygen = 0,
-    food = 0
+    oxygen = -10,
+    food = -5
 )
 
 #Kepler-442b back to spaceship
@@ -130,8 +130,8 @@ main_story.add_new_child(
     child_option_title='Headback to spaceship',
     child_description="You've safely returned back to the spaceship and have refilled your oxygen supply. You can either go back to exploring, stay at the spaceship, go back to the previous planet, or try exploring another planet.",
     fuel = 0,
-    oxygen = 0,
-    food = 0
+    oxygen = 10,
+    food = -5
 )
 
 #Kepler-442b stay at spaceship --> END
@@ -142,7 +142,7 @@ main_story.add_new_child(
     child_description="You've lost track of time and stayed at your spaceship for too long . Your food supply has ran out. The game has ended.",
     fuel = 0,
     oxygen = 0,
-    food = 0
+    food = -20
 )
 
 #Kepler-442b back to Proxima Centauri B --> END
@@ -151,9 +151,9 @@ main_story.add_new_child(
     child_id = 'leave_kepler_422b_2',
     child_option_title='Go back to Unkown planet 1 (Proxima Centauri b)',
     child_description="You ran out of fuel on the way. The game has ended.",
-    fuel = 0,
+    fuel = -20,
     oxygen = 0,
-    food = 0
+    food = -10
 )
 
 #Kepler-442b leave for Unkown Planet 3 --> END
@@ -244,8 +244,8 @@ main_story.add_new_child(
     child_option_title='Explore planet',
     child_description="You've been exploring for a while and are running low on food. You could try the mushroom looking organisms around you or head back to the spaceship.",
     fuel = 0,
-    oxygen = 0,
-    food = 0
+    oxygen = -30,
+    food = -5
 )
 
 #Kepler 62f back to spaceship --> END

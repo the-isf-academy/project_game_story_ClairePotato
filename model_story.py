@@ -53,20 +53,14 @@ class Story():
         else:
             return False 
 
-    def fuel_supply(self, fuel_supply, add_fuel):
-        add_fuel = self.fuel
-        self.fuel_supply = fuel_supply + add_fuel
+    def add_fuel_supply(self, add_fuel):
+        self.fuel_supply = self.fuel_supply + add_fuel
 
-    def oxygen_supply(self, oxygen_supply, add_oxygen):
-        add_oxygen = self.oxygen
-        self.oxygen_supply = oxygen_supply + add_oxygen
+    def add_oxygen_supply(self, add_oxygen):
+        self.oxygen_supply = self.oxygen_supply + add_oxygen
 
-    def food_supply(self, food_supply, add_food):
-        add_food = self.food
-        self.food_supply = food_supply + add_food
-
-    
-
+    def add_food_supply(self, add_food):
+        self.food_supply = self.food_supply + add_food
 
 
 

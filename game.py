@@ -11,6 +11,15 @@ view.start_game(main_story)
 while main_story.is_finished() == False:    
     chosen_node = view.menu("[what will you do?]", main_story.get_current_children())
     main_story.set_current_node(chosen_node)
+    main_story.add_fuel_supply(chosen_node.fuel_supply)
+    main_story.add_oxygen_supply(chosen_node.oxygen_supply)
+    main_story.add_food_supply(chosen_node.food_supply)
+    if main_story.fuel_supply < 0:
+        view.end_game()
+    elif main_story.oxygen_supply < 0:
+        view.end_game()
+    elif main_story.food_supply < 0:
+        view.end_game()
     view.show_node_description(chosen_node)
     view.show_supply_stats(main_story.fuel_supply, main_story.oxygen_supply, main_story.food_supply)
 

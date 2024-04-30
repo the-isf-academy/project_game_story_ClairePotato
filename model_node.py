@@ -6,9 +6,9 @@ class Node():
         self.children = []  #a list of node objects
         self.option_title = option_title  # text for display in the menu          
         self.description = description  # text to show if this option is selected 
-        self.fuel_supply = 20
-        self.oxygen_supply = 20
-        self.food_supply = 20
+        self.fuel_supply = fuel_supply
+        self.oxygen_supply = oxygen_supply
+        self.food_supply = food_supply
 
     def __str__(self):
         # defines how a node will be printed 

@@ -1,5 +1,6 @@
 from InquirerPy import inquirer, get_style  
 from helpers import print_slow     
+from playsound import playsound
 
 class View:
 
@@ -26,11 +27,11 @@ class View:
         print("="*50)
         print(f"Title: {story.title}")
         print(f"{story.first_node.option_title}")
-        print_slow(f"{story.first_node.description}", 0.03)
+        print(f"{story.first_node.description}", 0.03)
         print("="*50)
 
     def show_node_description(self, node):
-        print_slow(f"{node.description}", 0.05)
+        print(f"{node.description}", 0.05)
     
     def show_supply_stats(self, fuel_supply, oxygen_supply, food_supply):
         print(f"""
@@ -49,4 +50,5 @@ Food Supply: {food_supply}""")
 | . | .'|     | -_|  | -_|   | . |
 |_  |__,|_|_|_|___|  |___|_|_|___|
 |___|                             """)
+        playsound("Arcade game over sound effect!.mp3")
         print("="*50)
