@@ -42,7 +42,7 @@ Oxygen Supply: {oxygen_supply}
 Food Supply: {food_supply}""")
         print("-"*15)
 
-    def end_game(self):
+    def end_game(self, story):
         print("="*50)
         print("""\
                                 _ 
@@ -52,3 +52,4 @@ Food Supply: {food_supply}""")
 |___|                             """)
         playsound("Arcade game over sound effect!.mp3")
         print("="*50)
+        print("Would you like to play again?")

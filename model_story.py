@@ -47,20 +47,31 @@ class Story():
   
     def is_finished(self):
         # returns True or False based on if the current node has children
-        
         if len(self.current_node.children) == 0:
+            return True
+        elif self.fuel_supply < 0:
+            return True
+        elif self.oxygen_supply < 0:
+            return True
+        elif self.food_supply < 0:
             return True
         else:
             return False 
 
     def add_fuel_supply(self, add_fuel):
+        # changes the fuel supply based on the nodes
         self.fuel_supply = self.fuel_supply + add_fuel
 
     def add_oxygen_supply(self, add_oxygen):
+        # changes the oxygen supply based on the nodes
         self.oxygen_supply = self.oxygen_supply + add_oxygen
 
     def add_food_supply(self, add_food):
+        # changes the food supply based on the nodes
         self.food_supply = self.food_supply + add_food
 
-
-
+    def reset_supplies(self):
+        # resets supplies back to 20
+        self.fuel_supply = 20
+        self.oxygen_supply = 20
+        self.food_supply = 20

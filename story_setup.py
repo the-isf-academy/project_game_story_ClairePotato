@@ -5,7 +5,7 @@ main_story = Story(
     title='Finding A New Home',
     start_id = 'earth',
     start_option_title = "You are at Earth.",
-    start_description= "Earth is slowly becoming inhabitable. You are sent to space to search for a new planet for civilization. Be prepared to embark on your own space adventure, venturing through stars and planets.",
+    start_description= "🌌 Earth is slowly becoming inhabitable. You are sent to space to search for a new planet for civilization. Be prepared to embark on your own space adventure, venturing through stars and planets.",
     fuel_supply = 20,
     oxygen_supply = 20,
     food_supply = 20
@@ -16,7 +16,7 @@ main_story.add_new_child(
     parent_id = 'earth', 
     child_id = 'proxima_centauri_b',
     child_option_title='Go to Unkown Planet 1',
-    child_description="You are now heading to Unkown Planet 1",
+    child_description="🪐 You are now heading to Unkown Planet 1. You can see aliens on the planet from your spaceship.",
     fuel = -10,
     oxygen = 0,
     food = 0
@@ -27,44 +27,61 @@ main_story.add_new_child(
     parent_id = 'proxima_centauri_b', 
     child_id = 'communicate_with_aliens',
     child_option_title='Communicate with aliens',
-    child_description="The aliens say you aren't welcomed here, but you can trade with them for either oxygen, fuel, or food, and then leave for another planet.", #aliens offer trade
+    child_description="🛸 The aliens say you aren't welcomed here, but you can trade with them for either oxygen, fuel, or food, and then leave for another planet.", #aliens offer trade
     fuel = 0,
-    oxygen = 5,
+    oxygen = 0,
+    food = 0
+)
+
+#Snake game
+main_story.add_new_child(
+    parent_id = 'communicate_with_aliens', 
+    child_id = 'snake_game',
+    child_option_title="Challenge aliens to snake game",
+    child_description=" ",
+    fuel = 0,
+    oxygen = 0,
     food = 0
 )
 
 #Trade for oxygen
 main_story.add_new_child(
-    parent_id = 'communicate_with_aliens', 
+    parent_id = 'snake_game', 
     child_id = 'trade_oxygen',
     child_option_title='Trade for oxygen, leave for next planet',
     child_description="Great! Your oxygen supply has been partially replenished. You are now being sent to the next planet...",
     fuel = 0,
-    oxygen = 0,
+    oxygen = 10,
     food = 0
 )
+
+main_story.connect_existing_child('trade_oxygen', 'leave_proxima_centauri_b')
 
 #Trade for fuel
 main_story.add_new_child(
-    parent_id = 'communicate_with_aliens', 
+    parent_id = 'snake_game', 
     child_id = 'trade_fuel',
     child_option_title='Trade for fuel, leave for next planet',
     child_description="Great! Your fuel supply has been partially replenished. You are now being sent to the next planet...",
-    fuel = 5,
+    fuel = 10,
     oxygen = 0,
     food = 0
 )
 
+main_story.connect_existing_child('trade_fuel', 'leave_proxima_centauri_b')
+
 #Trade for food
 main_story.add_new_child(
-    parent_id = 'communicate_with_aliens', 
+    parent_id = 'snake_game', 
     child_id = 'trade_food',
     child_option_title='Trade for food, leave for next planet',
     child_description="Great! Your food supply has been partially replenished. You are now being sent to the next planet...",
     fuel = 0,
     oxygen = 0,
-    food = 5
+    food = 10
 )
+
+main_story.connect_existing_child('trade_food', 'leave_proxima_centauri_b')
 
 #Don't trade --> END
 main_story.add_new_child(
