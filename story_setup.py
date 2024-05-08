@@ -22,6 +22,17 @@ main_story.add_new_child(
     food = 0
 )
 
+#Leave Proxima Centauri B
+main_story.add_new_child(
+    parent_id = 'proxima_centauri_b', 
+    child_id = 'leave_proxima_centauri_b',
+    child_option_title="Leave for unkown planet 2",
+    child_description="You are now heading to Unkown Planet 2",
+    fuel = 0,
+    oxygen = 0,
+    food = 0
+)
+
 #Explore planet / try to communicate with aliens
 main_story.add_new_child(
     parent_id = 'proxima_centauri_b', 
@@ -89,17 +100,6 @@ main_story.add_new_child(
     child_id = 'dominate_proxima_centauri_b',
     child_option_title="Ignore the alien's offer, stay at planet",
     child_description="You've been killed by the aliens. The game has ened.",
-    fuel = 0,
-    oxygen = 0,
-    food = 0
-)
-
-#Leave Proxima Centauri B
-main_story.add_new_child(
-    parent_id = 'proxima_centauri_b', 
-    child_id = 'leave_proxima_centauri_b',
-    child_option_title="Leave for unkown planet 2",
-    child_description="You are now heading to Unkown Planet 2",
     fuel = 0,
     oxygen = 0,
     food = 0

@@ -21,12 +21,17 @@ while True:
         main_story.add_oxygen_supply(chosen_node.oxygen_supply)
         main_story.add_food_supply(chosen_node.food_supply)
         if main_story.current_node.id == "snake_game":
-            snake()
-            if snake.win == False:
+            the_snake_game = Snake()
+            the_snake_game.snake_game()
+            win_time = the_snake_game.total_time
+            if win_time == None or win_time > 10:
+                # if player took more than the time limit to beat the game
                 print("You suck at the snake game.")
                 break
-            else:
-                print("Trade")
+            elif Snake.win == False: 
+                # if player loose eg. snake crashed with itself
+                print("You suck at the snake game.")
+                break
 
     # show the end message
     view.end_game(main_story)
