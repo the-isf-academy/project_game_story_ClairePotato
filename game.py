@@ -28,7 +28,7 @@ while True:
                 # if player took more than the time limit to beat the game
                 print("You suck at the snake game.")
                 break
-            elif Snake.win == False: 
+            elif the_snake_game.win == False: 
                 # if player loose eg. snake crashed with itself
                 print("You suck at the snake game.")
                 break

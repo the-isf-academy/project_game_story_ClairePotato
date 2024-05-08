@@ -74,8 +74,7 @@ class Snake:
                 self.end_time = time()
                 run = False  
                 self.win = True   
-                self.total_time = self.end_time - self.start_time
-                return self.total_time           
+                self.total_time = self.end_time - self.start_time          
                 
             pygame.display.update()
             pygame.time.Clock().tick(10)
